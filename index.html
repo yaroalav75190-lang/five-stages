@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Камилла, это про тебя</title>
+<meta name="description" content="Личный экземпляр. Тираж 1 шт.">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="yandex" content="none">
+<meta property="og:title" content="Камилла, это про тебя">
+<meta property="og:description" content="Пять стадий, одна развилка и очень много узнаваемых мемов. Тираж 1 экземпляр.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800;900&family=Caveat:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F0E7D6;
+  --paper-hi:#FBF6EA;
+  --paper-lo:#E4D8C2;
+  --ink:#15171A;
+  --ink-2:#43484D;
+  --ink-3:#6E7379;
+  --faint:#9A9386;
+  --rule:#D3C6AE;
+  --rule-hard:#15171A;
+
+  --red:#E13B2C;
+  --tomato:#F4614A;
+  --mustard:#F2B02E;
+  --honey:#FFD873;
+  --mint:#12A67C;
+  --mint-lo:#B9E8D8;
+  --blue:#2E63D6;
+  --violet:#7C4FC7;
+  --pink:#EA5C8E;
+  --coal:#101114;
+
+  --s1:#2E63D6;
+  --s2:#E13B2C;
+  --s3:#F2B02E;
+  --s4:#7C4FC7;
+  --s5:#12A67C;
+
+  --disp:'Unbounded','Arial Black',system-ui,sans-serif;
+  --hand:'Caveat','Comic Sans MS',cursive;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+
+  --sh:6px 6px 0 var(--coal);
+  --sh-sm:4px 4px 0 var(--coal);
+  --sh-xs:3px 3px 0 var(--coal);
+}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--body);
+  color:var(--ink);
+  line-height:1.55;
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(21,23,26,.055) 1px, transparent 0);
+  background-size:22px 22px;
+  padding:0 18px 0;
+  overflow-x:hidden;
+}
+.wrap{max-width:1080px;margin:0 auto;}
+::selection{background:var(--mustard);color:var(--coal);}
+
+/* ---------- shared bits ---------- */
+.card{
+  background:var(--paper-hi);
+  border:3px solid var(--coal);
+  border-radius:4px;
+  box-shadow:var(--sh);
+}
+.tag{
+  display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;
+  border:2px solid var(--coal);border-radius:999px;background:var(--paper-hi);
+  white-space:nowrap;
+}
+.sticker{
+  display:inline-block;font-family:var(--disp);font-weight:800;font-size:12px;
+  letter-spacing:.04em;text-transform:uppercase;padding:9px 14px;
+  border:3px solid var(--coal);box-shadow:var(--sh-xs);border-radius:3px;
+  line-height:1.15;
+}
+.hand{font-family:var(--hand);font-size:23px;line-height:1.35;color:var(--ink-2);}
+.hand b{font-weight:700;color:var(--ink);}
+
+h2.sec{
+  font-family:var(--disp);font-weight:900;text-transform:uppercase;
+  font-size:clamp(26px,5.2vw,46px);line-height:.98;letter-spacing:-.02em;
+  margin:0 0 14px;
+}
+.sec-lead{font-size:17px;color:var(--ink-2);max-width:58ch;margin:0 0 30px;}
+section{padding:64px 0;position:relative;}
+.rule{height:0;border:0;border-top:3px solid var(--coal);margin:0;opacity:.14;}
+
+/* ---------- reveal (only when JS is alive; without it everything stays visible) ---------- */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.3,1);}
+.js .rv.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+/* ---------- hero ---------- */
+header{padding:44px 0 20px;position:relative;}
+.kicker{
+  display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:26px;
+}
+.kicker .tag{background:var(--coal);color:var(--paper-hi);border-color:var(--coal);}
+.kicker .tag.alt{background:var(--mustard);color:var(--coal);}
+.kicker .tag.alt2{background:var(--tomato);color:#fff;}
+
+h1{
+  font-family:var(--disp);font-weight:900;text-transform:uppercase;
+  font-size:clamp(40px,10.5vw,104px);line-height:.86;letter-spacing:-.035em;
+  margin:0 0 22px;
+}
+h1 .ln2{display:block;color:var(--red);}
+h1 em{
+  font-style:normal;position:relative;display:inline-block;
+}
+h1 em::after{
+  content:"";position:absolute;left:-2%;right:-2%;bottom:.1em;height:.16em;
+  background:var(--honey);z-index:-1;transform:rotate(-1deg);
+}
+.lede{font-size:clamp(17px,2.3vw,21px);max-width:60ch;color:var(--ink-2);margin:0 0 26px;font-weight:500;}
+.lede b{color:var(--ink);font-weight:800;}
+
+.hero-stickers{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:34px;}
+.hero-stickers .sticker:nth-child(1){background:var(--tomato);color:#fff;transform:rotate(-3deg);}
+.hero-stickers .sticker:nth-child(2){background:var(--mustard);color:var(--coal);transform:rotate(2.2deg);}
+.hero-stickers .sticker:nth-child(3){background:var(--mint);color:#fff;transform:rotate(-1.6deg);}
+
+.warn{
+  border:3px solid var(--coal);border-radius:4px;background:var(--honey);
+  box-shadow:var(--sh);padding:20px 22px;position:relative;max-width:640px;
+  transform:rotate(-.5deg);
+}
+.warn .wt{font-family:var(--disp);font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;}
+.warn p{margin:0;font-size:15.5px;font-weight:500;color:#2A2410;}
+.tape{
+  position:absolute;top:-15px;left:50%;transform:translateX(-50%) rotate(-2deg);
+  width:110px;height:26px;background:rgba(255,255,255,.55);
+  border:2px solid rgba(21,23,26,.28);
+}
+
+/* ---------- thesis ---------- */
+.thesis{
+  border:3px solid var(--coal);border-radius:4px;background:var(--coal);color:var(--paper-hi);
+  padding:36px 32px;box-shadow:8px 8px 0 var(--red);
+}
+.thesis p{margin:0 0 16px;font-size:clamp(17px,2.4vw,22px);font-weight:600;line-height:1.4;}
+.thesis p:last-child{margin-bottom:0;}
+.thesis .hl-a{background:var(--mint);color:var(--coal);padding:1px 8px;border-radius:3px;font-weight:800;}
+.thesis .hl-b{background:var(--tomato);color:#fff;padding:1px 8px;border-radius:3px;font-weight:800;}
+.thesis .small{font-size:15px;font-weight:500;color:#B7BDC4;}
+
+/* ---------- quiz ---------- */
+.quiz{background:var(--paper-hi);border:3px solid var(--coal);border-radius:4px;box-shadow:var(--sh);overflow:hidden;}
+.quiz-hd{background:var(--violet);color:#fff;padding:20px 24px;border-bottom:3px solid var(--coal);}
+.quiz-hd h3{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(18px,3.4vw,27px);margin:0 0 5px;line-height:1.05;}
+.quiz-hd p{margin:0;font-size:14px;opacity:.92;font-weight:500;}
+.quiz-body{padding:22px 24px 26px;}
+.qlist{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px;margin:0 0 22px;padding:0;list-style:none;}
+.qlist li{margin:0;}
+.qi{display:flex;gap:11px;align-items:flex-start;cursor:pointer;padding:8px 9px;border-radius:4px;transition:background .15s;user-select:none;}
+.qi:hover{background:var(--paper-lo);}
+.qi input{position:absolute;opacity:0;width:0;height:0;}
+.box{
+  flex:0 0 auto;width:22px;height:22px;border:3px solid var(--coal);border-radius:3px;
+  background:var(--paper-hi);margin-top:1px;display:grid;place-items:center;
+  font-family:var(--disp);font-size:14px;font-weight:900;color:transparent;transition:background .12s;
+}
+.qi input:checked + .box{background:var(--mint);color:#fff;}
+.qi input:focus-visible + .box{outline:3px solid var(--blue);outline-offset:2px;}
+.qi span.t{font-size:15px;font-weight:500;line-height:1.4;}
+.qi input:checked ~ span.t{font-weight:700;}
+.verdict{
+  border-top:3px dashed var(--rule-hard);padding-top:20px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;
+}
+.score{
+  flex:0 0 auto;font-family:var(--disp);font-weight:900;font-size:44px;line-height:1;
+  border:3px solid var(--coal);border-radius:4px;padding:14px 18px;background:var(--mustard);
+  box-shadow:var(--sh-xs);min-width:104px;text-align:center;
+}
+.score small{display:block;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.1em;margin-top:6px;text-transform:uppercase;}
+.vtext{flex:1 1 320px;min-width:260px;}
+.vtext .vt-h{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:17px;margin-bottom:6px;line-height:1.15;}
+.vtext .vt-p{font-size:15.5px;color:var(--ink-2);font-weight:500;}
+.vtext .vt-x{margin-top:10px;font-family:var(--hand);font-size:21px;color:var(--red);}
+
+/* ---------- stages ---------- */
+.stage{
+  border:3px solid var(--coal);border-radius:4px;background:var(--paper-hi);
+  box-shadow:var(--sh);margin-bottom:34px;overflow:hidden;
+}
+.st-hd{display:flex;gap:18px;align-items:center;padding:20px 24px;border-bottom:3px solid var(--coal);color:#fff;}
+.st-num{
+  flex:0 0 auto;width:56px;height:56px;display:grid;place-items:center;
+  font-family:var(--disp);font-weight:900;font-size:30px;color:var(--coal);
+  background:var(--paper-hi);border:3px solid var(--coal);border-radius:4px;
+}
+.st-t{min-width:0;}
+.st-t h3{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(21px,4.2vw,34px);margin:0;line-height:1;letter-spacing:-.02em;}
+.st-t .when{font-family:var(--mono);font-size:12px;font-weight:500;margin-top:6px;opacity:.94;}
+.st-body{padding:24px;}
+.quote{
+  font-family:var(--hand);font-size:clamp(22px,3.4vw,30px);line-height:1.28;color:var(--ink);
+  border-left:5px solid currentColor;padding:2px 0 2px 18px;margin:0 0 24px;
+}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.facts{display:grid;gap:14px;margin-bottom:22px;}
+.fact{border-left:4px solid var(--rule);padding-left:14px;}
+.fact .fl{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin-bottom:3px;}
+.fact .fv{font-size:15px;font-weight:500;color:var(--ink-2);line-height:1.45;}
+.fact .fv b{color:var(--ink);font-weight:700;}
+
+.bars{display:grid;gap:12px;margin-top:4px;}
+.bar-r .bl{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}
+.bar-r .bl b{font-family:var(--disp);font-size:16px;font-weight:900;letter-spacing:0;}
+.track{height:15px;border:3px solid var(--coal);border-radius:999px;background:var(--paper-lo);overflow:hidden;}
+.fill{height:100%;width:var(--w);transition:width 1.05s cubic-bezier(.2,.75,.25,1);}
+.js .fill{width:0;}
+.js .in .fill{width:var(--w);}
+.tell{
+  margin-top:22px;border:3px solid var(--coal);border-radius:4px;background:var(--paper-lo);
+  padding:13px 16px;font-size:15px;font-weight:600;
+}
+.tell b{font-family:var(--disp);font-weight:800;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-3);}
+
+/* ---------- meme frames ---------- */
+.meme{border:3px solid var(--coal);border-radius:4px;overflow:hidden;background:var(--paper-hi);box-shadow:var(--sh-sm);}
+.meme-hd{
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  padding:9px 13px;border-bottom:3px solid var(--coal);background:var(--coal);color:var(--paper-hi);
+  display:flex;justify-content:space-between;gap:10px;align-items:center;
+}
+.meme-cap{
+  font-family:var(--hand);font-size:20px;line-height:1.3;color:var(--ink-2);
+  padding:12px 14px;border-top:3px dashed var(--rule-hard);background:var(--paper-lo);
+}
+
+/* chat */
+.chat{padding:15px 13px;display:grid;gap:9px;background:#DDE7DE;}
+.msg{max-width:86%;padding:9px 13px;border-radius:14px;font-size:14.5px;font-weight:500;line-height:1.4;position:relative;border:2px solid var(--coal);}
+.msg .who{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin-bottom:3px;}
+.msg .tm{font-family:var(--mono);font-size:10px;opacity:.55;margin-left:8px;}
+.msg.them{background:#fff;justify-self:start;border-bottom-left-radius:4px;}
+.msg.me{background:#C7F0C4;justify-self:end;border-bottom-right-radius:4px;}
+.msg.sys{
+  justify-self:center;background:transparent;border:2px dashed rgba(21,23,26,.4);
+  font-family:var(--mono);font-size:11.5px;font-style:normal;color:#3C443D;max-width:none;
+  border-radius:999px;padding:5px 13px;
+}
+.dots i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ink-3);margin-right:3px;animation:bl 1.3s infinite;}
+.dots i:nth-child(2){animation-delay:.18s;}
+.dots i:nth-child(3){animation-delay:.36s;}
+@keyframes bl{0%,60%,100%{opacity:.25;}30%{opacity:1;}}
+
+/* calendar */
+.cal{padding:16px;}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;}
+.cal-g div{
+  aspect-ratio:1;display:grid;place-items:center;border:2px solid var(--coal);border-radius:3px;
+  font-family:var(--mono);font-size:11px;font-weight:600;background:var(--tomato);color:#fff;
+}
+.cal-g div.off{background:var(--paper-lo);color:var(--faint);border-style:dashed;}
+.cal-lg{display:flex;gap:16px;flex-wrap:wrap;margin-top:13px;font-family:var(--mono);font-size:11px;font-weight:600;}
+.cal-lg i{display:inline-block;width:12px;height:12px;border:2px solid var(--coal);border-radius:2px;vertical-align:-2px;margin-right:5px;}
+
+/* slide */
+.slide{background:#fff;padding:0;}
+.slide-top{background:linear-gradient(135deg,#1B3E86,#2E63D6);color:#fff;padding:30px 22px;text-align:center;}
+.slide-top .sm{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.75;margin-bottom:10px;}
+.slide-top .big{font-family:var(--disp);font-weight:900;font-size:clamp(38px,9vw,62px);line-height:.9;letter-spacing:-.03em;}
+.slide-top .sub{font-family:var(--mono);font-size:11.5px;margin-top:10px;opacity:.9;}
+.slide-real{padding:16px;background:var(--paper-lo);border-top:3px solid var(--coal);}
+.slide-real .rl{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin-bottom:9px;}
+.slide-real ul{margin:0;padding-left:19px;font-size:14.5px;font-weight:500;line-height:1.65;}
+
+/* receipt */
+.rc{background:#FFFDF7;padding:20px 22px;font-family:var(--mono);font-size:13px;}
+.rc .rc-h{text-align:center;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:11px;padding-bottom:12px;border-bottom:2px dashed var(--ink-3);margin-bottom:13px;}
+.rc-l{display:flex;justify-content:space-between;gap:10px;padding:5px 0;align-items:baseline;}
+.rc-l .d{flex:1;border-bottom:1.5px dotted var(--rule);margin:0 6px 4px;min-width:14px;}
+.rc-l.tot{border-top:2px dashed var(--ink-3);margin-top:11px;padding-top:11px;font-weight:600;font-size:14.5px;}
+.rc-f{text-align:center;font-size:10.5px;margin-top:15px;padding-top:12px;border-top:2px dashed var(--ink-3);color:var(--ink-3);line-height:1.6;}
+
+/* offer letter */
+.doc{background:#FFFDF7;padding:20px 22px;font-family:var(--mono);font-size:13.5px;line-height:1.7;}
+.doc .dl{display:flex;gap:9px;padding:4px 0;}
+.doc .dl b{flex:0 0 auto;color:var(--red);font-weight:600;}
+.stamp{
+  display:inline-block;margin-top:14px;font-family:var(--disp);font-weight:900;font-size:13px;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--red);border:3px solid var(--red);
+  border-radius:4px;padding:8px 13px;transform:rotate(-6deg);opacity:.88;
+}
+
+/* ---------- horsemen (the five real triggers) ---------- */
+.horse{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.hcard{border:3px solid var(--coal);border-radius:4px;background:var(--paper-hi);box-shadow:var(--sh);overflow:hidden;}
+.hcard.wide{grid-column:1 / -1;}
+.hc-hd{padding:15px 20px;border-bottom:3px solid var(--coal);color:#fff;display:flex;gap:14px;align-items:center;}
+.hc-hd .hn{font-family:var(--disp);font-weight:900;font-size:27px;line-height:1;opacity:.5;flex:0 0 auto;}
+.hc-hd h3{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:16.5px;margin:0;line-height:1.12;letter-spacing:-.01em;}
+.hc-body{padding:18px 20px 20px;}
+.hc-body .meme{margin-bottom:17px;}
+.hc-split{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;}
+.truth{border-left:4px solid var(--rule);padding-left:13px;margin-bottom:13px;}
+.truth:last-child{margin-bottom:0;}
+.truth .tl{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin-bottom:3px;}
+.truth .tv{font-size:14.5px;font-weight:500;color:var(--ink-2);line-height:1.45;}
+.truth .tv b{color:var(--ink);font-weight:700;}
+.truth.hot{border-left-color:var(--red);}
+.notyou{
+  margin-top:16px;background:var(--mint-lo);border:3px solid var(--coal);border-radius:4px;
+  padding:12px 15px;font-size:14px;font-weight:600;color:#0B4634;line-height:1.4;
+}
+.notyou b{font-family:var(--disp);font-weight:800;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:4px;color:#12775A;}
+
+/* payroll sheet */
+.ved{background:#FFFDF7;padding:16px;font-family:var(--mono);font-size:12px;}
+.ved table{width:100%;border-collapse:collapse;}
+.ved th{font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);text-align:right;padding:0 0 7px;font-weight:600;}
+.ved th:first-child{text-align:left;}
+.ved td{padding:5px 0;border-top:1.5px dotted var(--rule);text-align:right;}
+.ved td:first-child{text-align:left;}
+.ved .bad{color:var(--red);font-weight:600;}
+.ved .ok{color:var(--mint);font-weight:600;}
+
+/* stop list */
+.stop{padding:16px 18px;background:#FFFDF7;font-family:var(--mono);font-size:12.5px;}
+.stop .sh{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:11px;padding-bottom:9px;border-bottom:2px dashed var(--ink-3);}
+.stop ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;}
+.stop li{display:flex;justify-content:space-between;gap:10px;text-decoration:line-through;color:var(--ink-3);}
+.stop li i{font-style:normal;text-decoration:none;color:var(--red);font-size:9px;letter-spacing:.05em;text-transform:uppercase;flex:0 0 auto;align-self:center;}
+.stop .left{margin-top:12px;padding-top:11px;border-top:2px dashed var(--ink-3);display:flex;justify-content:space-between;font-weight:600;color:var(--ink);}
+
+/* ---------- alarm block ---------- */
+.alarm{border:3px solid var(--coal);border-radius:4px;background:var(--paper-hi);box-shadow:8px 8px 0 var(--red);overflow:hidden;}
+.alarm-hd{background:var(--red);color:#fff;padding:22px 24px;border-bottom:3px solid var(--coal);}
+.alarm-hd .an{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;opacity:.92;margin-bottom:8px;}
+.alarm-hd h3{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(21px,4.4vw,36px);margin:0;line-height:.98;letter-spacing:-.02em;}
+.alarm-body{padding:22px 24px 24px;}
+.rc-l.bad span:last-child{color:var(--red);font-weight:600;}
+.todo{margin-top:18px;background:var(--mint-lo);border:3px solid var(--coal);border-radius:4px;padding:17px 19px;}
+.todo .tdl{font-family:var(--disp);font-weight:800;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#12775A;margin-bottom:10px;}
+.todo ol{margin:0;padding-left:19px;display:grid;gap:8px;}
+.todo li{font-size:14.5px;font-weight:600;color:#0B4634;line-height:1.42;}
+
+/* ---------- achievements ---------- */
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:16px;}
+.ach{
+  border:3px solid var(--coal);border-radius:4px;background:var(--paper-hi);box-shadow:var(--sh-xs);
+  padding:16px 17px;display:flex;gap:13px;align-items:flex-start;
+}
+.ach .ic{font-size:27px;line-height:1;flex:0 0 auto;}
+.ach .an{font-family:var(--disp);font-weight:800;font-size:13px;text-transform:uppercase;line-height:1.2;margin-bottom:5px;letter-spacing:-.01em;}
+.ach .ad{font-size:13.5px;color:var(--ink-2);font-weight:500;line-height:1.4;}
+.ach .st{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--mint);margin-top:7px;}
+.ach.locked{opacity:.62;background:var(--paper-lo);border-style:dashed;box-shadow:none;}
+.ach.locked .st{color:var(--faint);}
+
+/* ---------- bingo ---------- */
+.bingo-wrap{border:3px solid var(--coal);border-radius:4px;background:var(--paper-hi);box-shadow:var(--sh);overflow:hidden;}
+.bingo-hd{background:var(--tomato);color:#fff;padding:20px 24px;border-bottom:3px solid var(--coal);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;}
+.bingo-hd h3{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(18px,3.4vw,27px);margin:0;line-height:1.05;}
+.bingo-hd p{margin:4px 0 0;font-size:14px;font-weight:500;opacity:.94;}
+.bingo-hd button{
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  background:#fff;color:var(--coal);border:3px solid var(--coal);border-radius:999px;padding:8px 15px;cursor:pointer;
+  box-shadow:var(--sh-xs);transition:transform .1s;
+}
+.bingo-hd button:active{transform:translate(3px,3px);box-shadow:none;}
+.bg{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:16px;}
+.bc{
+  aspect-ratio:1;border:3px solid var(--coal);border-radius:4px;background:var(--paper-hi);
+  padding:7px 6px;display:grid;place-items:center;text-align:center;cursor:pointer;
+  font-size:11.5px;font-weight:600;line-height:1.22;transition:background .12s,transform .1s;
+  user-select:none;position:relative;overflow:hidden;hyphens:auto;
+}
+.bc:hover{background:var(--honey);}
+.bc.on{background:var(--mint);color:#fff;}
+.bc.on::after{
+  content:"✕";position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--disp);font-size:52px;font-weight:900;color:rgba(255,255,255,.34);pointer-events:none;
+}
+.bc.free{background:var(--coal);color:var(--honey);cursor:default;font-family:var(--disp);font-weight:800;font-size:10.5px;text-transform:uppercase;}
+.bc.free:hover{background:var(--coal);}
+.bc.win{animation:pop .45s ease;}
+@keyframes pop{0%{transform:scale(1);}45%{transform:scale(1.13) rotate(-3deg);}100%{transform:scale(1);}}
+.bingo-ft{padding:15px 20px;border-top:3px dashed var(--rule-hard);background:var(--paper-lo);font-family:var(--hand);font-size:21px;color:var(--ink-2);min-height:56px;display:flex;align-items:center;}
+.bingo-ft.won{background:var(--mint);color:#fff;font-weight:600;}
+
+/* ---------- phrasebook ---------- */
+.pb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+.pb{
+  border:3px solid var(--coal);border-radius:4px;background:var(--paper-hi);box-shadow:var(--sh-xs);
+  padding:0;cursor:pointer;overflow:hidden;transition:transform .12s;text-align:left;font:inherit;color:inherit;width:100%;
+}
+.pb:active{transform:translate(2px,2px);}
+.pb .said{
+  padding:17px 18px;font-family:var(--disp);font-weight:700;font-size:15px;line-height:1.3;
+  display:flex;gap:11px;align-items:flex-start;
+}
+.pb .said::before{content:"🎙";font-size:17px;flex:0 0 auto;}
+.pb .means{
+  max-height:0;overflow:hidden;transition:max-height .32s ease;
+  background:var(--coal);color:var(--paper-hi);
+}
+.pb.open .means{max-height:220px;}
+.pb .means-in{padding:15px 18px;font-size:14.5px;font-weight:500;line-height:1.5;border-top:3px solid var(--coal);}
+.pb .means-in .lbl{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--mustard);margin-bottom:6px;}
+.pb .hint{
+  font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--faint);padding:0 18px 14px;
+}
+.pb.open .hint{display:none;}
+
+/* ---------- fork ---------- */
+.fork-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.path{border:3px solid var(--coal);border-radius:4px;overflow:hidden;box-shadow:var(--sh);background:var(--paper-hi);}
+.path-hd{padding:22px 22px 20px;color:#fff;border-bottom:3px solid var(--coal);}
+.path-hd .pn{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;opacity:.85;margin-bottom:7px;}
+.path-hd h3{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(24px,5vw,40px);margin:0 0 8px;line-height:.95;letter-spacing:-.02em;}
+.path-hd p{margin:0;font-size:15px;font-weight:600;opacity:.95;}
+.path-body{padding:20px 22px 22px;}
+.path-body ul{margin:0 0 20px;padding:0;list-style:none;display:grid;gap:10px;}
+.path-body li{display:flex;gap:10px;font-size:14.5px;font-weight:500;line-height:1.42;}
+.path-body li::before{content:"→";font-family:var(--disp);font-weight:900;flex:0 0 auto;color:var(--ink-3);}
+.pblock{border-top:3px dashed var(--rule-hard);padding-top:14px;margin-top:16px;}
+.pblock .pl{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin-bottom:5px;}
+.pblock .pv{font-size:14.5px;font-weight:500;color:var(--ink-2);line-height:1.45;}
+.moment{
+  margin-top:18px;background:var(--paper-lo);border:3px solid var(--coal);border-radius:4px;
+  padding:14px 16px;font-family:var(--hand);font-size:20px;line-height:1.32;color:var(--ink-2);
+}
+
+.nothird{
+  margin-top:30px;border:3px solid var(--coal);border-radius:4px;background:var(--coal);color:var(--paper-hi);
+  padding:28px 26px;box-shadow:8px 8px 0 var(--mustard);
+}
+.nothird h3{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(20px,3.8vw,30px);margin:0 0 12px;line-height:1;}
+.nothird p{margin:0 0 12px;font-size:16px;font-weight:500;line-height:1.5;color:#D5DAE0;}
+.nothird p:last-child{margin:0;}
+.nothird b{color:var(--honey);font-weight:800;}
+
+/* ---------- factors ---------- */
+.fx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;}
+.fx{border:3px solid var(--coal);border-radius:4px;background:var(--paper-hi);box-shadow:var(--sh-xs);padding:20px;}
+.fx .fn{font-family:var(--disp);font-weight:900;font-size:34px;line-height:1;color:var(--paper-lo);margin-bottom:8px;-webkit-text-stroke:2px var(--coal);}
+.fx h4{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:14.5px;margin:0 0 8px;line-height:1.2;}
+.fx p{margin:0;font-size:14.5px;color:var(--ink-2);font-weight:500;line-height:1.45;}
+.fx .can{margin-top:11px;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+.fx .can.y{color:var(--mint);}
+.fx .can.n{color:var(--red);}
+
+/* ---------- outro ---------- */
+.outro{
+  border:3px solid var(--coal);border-radius:4px;background:var(--honey);box-shadow:var(--sh);
+  padding:34px 30px;position:relative;transform:rotate(-.4deg);
+}
+.outro .oh{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(22px,4.4vw,36px);line-height:1;margin:0 0 18px;color:#231D08;}
+.outro p{font-family:var(--hand);font-size:clamp(21px,3vw,26px);line-height:1.4;margin:0 0 14px;color:#2A2410;}
+.outro p:last-child{margin:0;}
+.outro .sig{text-align:right;font-family:var(--hand);font-size:24px;color:#5A4A18;margin-top:22px;}
+
+footer{padding:46px 0 60px;border-top:3px solid var(--coal);margin-top:60px;}
+footer .fine{font-size:14px;color:var(--ink-2);max-width:70ch;line-height:1.6;font-weight:500;}
+footer .fine b{color:var(--ink);font-weight:700;}
+footer .meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin-top:22px;display:flex;gap:8px;flex-wrap:wrap;}
+footer .meta i{font-style:normal;color:var(--rule);}
+
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+  .grid2{grid-template-columns:1fr;}
+  .fork-grid{grid-template-columns:1fr;}
+  .horse{grid-template-columns:1fr;}
+  .hc-split{grid-template-columns:1fr;}
+  .qlist{grid-template-columns:1fr;gap:2px;}
+  section{padding:52px 0;}
+}
+@media (max-width:620px){
+  body{padding:0 14px;background-size:18px 18px;}
+  .bg{gap:4px;padding:11px;}
+  /* squares are too tight for these phrases on a phone — let the row grow instead of clipping */
+  .bc{font-size:9px;padding:5px 3px;border-width:2px;line-height:1.15;aspect-ratio:auto;min-height:68px;overflow-wrap:anywhere;}
+  .bc.free{font-size:7.6px;}
+  .bc.on::after{font-size:30px;}
+  .st-hd{gap:13px;padding:16px 16px;}
+  .st-num{width:44px;height:44px;font-size:23px;}
+  .st-body{padding:18px 16px;}
+  .thesis{padding:26px 20px;box-shadow:5px 5px 0 var(--red);}
+  .quiz-body{padding:16px 16px 20px;}
+  .quiz-hd,.bingo-hd{padding:16px;}
+  .outro{padding:26px 20px;}
+  .card,.stage,.quiz,.bingo-wrap,.path{box-shadow:4px 4px 0 var(--coal);}
+  .cal-g{gap:3px;}
+  .cal-g div{font-size:9px;border-width:2px;}
+  .score{font-size:34px;min-width:86px;padding:11px 13px;}
+  .hand{font-size:20px;}
+}
+</style>
+<script>document.documentElement.className += ' js';</script>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ============ HERO ============ -->
+<header>
+  <div class="kicker">
+    <span class="tag">Личный экземпляр</span>
+    <span class="tag alt">Тираж — 1 шт.</span>
+    <span class="tag alt2">Не пересылать Левандовской</span>
+  </div>
+
+  <h1>Камилла,<span class="ln2">это <em>про тебя</em>.</span></h1>
+
+  <p class="lede">Мы взяли и нарисовали схему твоей работы. <b>Пять стадий, одна развилка и очень много мемов.</b> Плохая новость: ты себя узнаешь примерно на третьем экране. Хорошая: если схема узнаётся — значит, дело не в тебе, а в схеме.</p>
+
+  <div class="hero-stickers">
+    <span class="sticker">Осторожно:<br>узнаваемо</span>
+    <span class="sticker">Читать<br>после смены</span>
+    <span class="sticker">Смешно<br>до 3-й стадии</span>
+  </div>
+
+  <div class="warn">
+    <div class="tape"></div>
+    <div class="wt">⚠ Предупреждение</div>
+    <p>Страница содержит фразы, которые ты слышала на этой неделе. Возможны флешбэки, нервный смех и острое желание переслать это в рабочий чат. Последнее — не надо. Правда не надо.</p>
+  </div>
+</header>
+
+<!-- ============ THESIS ============ -->
+<section id="thesis">
+  <div class="thesis rv">
+    <p>У официанта токсичность заканчивается на нём. У тебя — нет.</p>
+    <p>Всё, что летит сверху, ты либо <span class="hl-a">гасишь собой</span>, либо <span class="hl-b">передаёшь вниз</span>.</p>
+    <p class="small">Третьего положения дольше пары месяцев не существует. И решает это не сила характера, не «просто соберись» и не мотивационный пост в сторис. Решает конструкция, в которую тебя поставили. Дальше — по стадиям.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ HORSEMEN ============ -->
+<section id="horsemen">
+  <h2 class="sec rv">Шесть всадников твоей операционки</h2>
+  <p class="sec-lead rv">Всадников Апокалипсиса было четыре. У тебя шесть — держись. И это не «трудности роста» и не «ну такой бизнес»: каждая из этих поломок чинится деньгами или одним решением сверху. Ни одна из них — не про тебя.</p>
+
+  <div class="horse rv">
+
+    <!-- 1 -->
+    <article class="hcard">
+      <div class="hc-hd" style="background:var(--blue);">
+        <div class="hn">01</div>
+        <h3>Зарплата, собранная руками</h3>
+      </div>
+      <div class="hc-body">
+        <div class="meme">
+          <div class="meme-hd"><span>Сверка · ведомость</span><span>снова</span></div>
+          <div class="ved">
+            <table>
+              <tr><th>Кто</th><th>По табелю</th><th>У Аллы</th><th>Что не так</th></tr>
+              <tr><td>Повар, смены</td><td>21</td><td>19</td><td class="bad">цифра ниоткуда</td></tr>
+              <tr><td>Су-шеф, часы</td><td>184</td><td>208</td><td class="bad">столько не бывает</td></tr>
+              <tr><td>Официант, ночные</td><td>8</td><td>8</td><td class="bad">«пересчитаем»</td></tr>
+              <tr><td>Бармен, подмены</td><td>4</td><td>0</td><td class="bad">«не было» — были</td></tr>
+              <tr><td>Посудомойка, смены</td><td>16</td><td>61</td><td class="bad">цифры местами</td></tr>
+            </table>
+          </div>
+          <div class="meme-cap">Табель сходится. У Аллы — нет. Доказывать, что сходится, будешь ты.</div>
+        </div>
+
+        <div class="truth">
+          <div class="tl">Что происходит</div>
+          <div class="tv">Раз в месяц ведомость приходит с расхождениями там, где в табеле всё в порядке. И ты садишься <b>доказывать, что правильное — правильное</b>: по каждому человеку, по каждому дню.</div>
+        </div>
+        <div class="truth hot">
+          <div class="tl">Важно: дело не в Алле</div>
+          <div class="tv">Дело в компании, которая посадила расчёт зарплаты на ручной счёт — без программы, без второй пары глаз и без единой проверки. <b>При такой конструкции ошибки неизбежны у кого угодно. Разница только в том, что ловить их поставили тебя — бесплатно и в своё время.</b></div>
+        </div>
+        <div class="truth">
+          <div class="tl">Цена ошибки</div>
+          <div class="tv">Не поймала — команда получает не свои деньги, а объясняет это им не бухгалтерия и не директор по зарплате. Ты.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="hcard">
+      <div class="hc-hd" style="background:var(--s2);">
+        <div class="hn">02</div>
+        <h3>Зарплата, которая опаздывает</h3>
+      </div>
+      <div class="hc-body">
+        <div class="meme">
+          <div class="meme-hd"><span>Рабочий чат</span><span>каждый месяц</span></div>
+          <div class="chat">
+            <div class="msg them"><div class="who">Су-шеф</div>Камилла, а зп сегодня?<span class="tm">5-е</span></div>
+            <div class="msg me">Сегодня узнаю<span class="tm">5-е</span></div>
+            <div class="msg them"><div class="who">Официант</div>А сегодня?<span class="tm">8-е</span></div>
+            <div class="msg me">Обещали до конца недели<span class="tm">8-е</span></div>
+            <div class="msg them"><div class="who">Повар</div>Камилла<span class="tm">12-е</span></div>
+            <div class="msg me">Я знаю. Я держу этот вопрос<span class="tm">12-е</span></div>
+            <div class="msg sys">вопрос держится 12-й день</div>
+          </div>
+          <div class="meme-cap">«Сегодня узнаю» — самая частая фраза в твоём телефоне. На втором месте «завтра точно».</div>
+        </div>
+
+        <div class="truth">
+          <div class="tl">Что происходит</div>
+          <div class="tv">Компания задерживает выплаты, а сообщать об этом людям приходит не тот, кто задержал, — а ты.</div>
+        </div>
+        <div class="truth hot">
+          <div class="tl">Что это стоит на самом деле</div>
+          <div class="tv"><b>Ты расплачиваешься собственной репутацией за чужое решение.</b> Через полгода команда перестанет верить не компании, а лично тебе — потому что обещала им ты.</div>
+        </div>
+        <div class="truth">
+          <div class="tl">Кто это чинит</div>
+          <div class="tv">Один человек, у которого есть доступ к расчётному счёту. Тебя в этом списке нет.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="hcard">
+      <div class="hc-hd" style="background:var(--s3);color:var(--coal);">
+        <div class="hn" style="opacity:.4;">03</div>
+        <h3>Продукты, которые не оплатили</h3>
+      </div>
+      <div class="hc-body">
+        <div class="meme">
+          <div class="meme-hd"><span>Стоп-лист на сегодня</span><span>18:00</span></div>
+          <div class="stop">
+            <div class="sh">Позиции недоступны</div>
+            <ul>
+              <li>Стейк рибай <i>нет поставки</i></li>
+              <li>Лосось <i>нет поставки</i></li>
+              <li>Дорадо <i>нет поставки</i></li>
+              <li>Салат с креветкой <i>нет креветки</i></li>
+              <li>Паста с трюфелем <i>нет трюфеля</i></li>
+              <li>Тирамису <i>нет маскарпоне</i></li>
+              <li>Бокал белого <i>не привезли</i></li>
+            </ul>
+            <div class="left"><span>Осталось в меню</span><span>9 позиций</span></div>
+          </div>
+          <div class="meme-cap">Гости думают, что у вас концепция. У вас не концепция — у вас неоплаченный счёт поставщику.</div>
+        </div>
+
+        <div class="truth">
+          <div class="tl">Что происходит</div>
+          <div class="tv">Поставщикам не платят вовремя, поставки встают, и меню сжимается до того, что осталось на складе.</div>
+        </div>
+        <div class="truth hot">
+          <div class="tl">Кто оказывается виноват</div>
+          <div class="tv">Официант — перед гостем. Шеф — перед официантом. <b>Ты — перед всеми сразу, включая отзыв на две звезды, который потом разберут на совещании как твою недоработку.</b></div>
+        </div>
+        <div class="truth">
+          <div class="tl">Чем это заканчивается</div>
+          <div class="tv">Падает выручка — и план тебе на следующий месяц всё равно поднимут.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="hcard">
+      <div class="hc-hd" style="background:var(--s4);">
+        <div class="hn">04</div>
+        <h3>Идеи, которые никто не считал</h3>
+      </div>
+      <div class="hc-body">
+        <div class="meme">
+          <div class="meme-hd"><span>Новая инициатива</span><span>№ 47</span></div>
+          <div class="doc">
+            <div class="dl"><b>Суть:</b><span>каждый гость получает комплимент от шефа</span></div>
+            <div class="dl"><b>Поваров:</b><span>два</span></div>
+            <div class="dl"><b>Считал:</b><span>—</span></div>
+            <div class="dl"><b>Бюджет:</b><span>—</span></div>
+            <div class="dl"><b>Внедрить:</b><span>с понедельника</span></div>
+            <div class="dl"><b>Объяснять команде:</b><span>Камилле</span></div>
+            <div class="dl"><b>Отменят:</b><span>через три недели</span></div>
+            <span class="stamp">Работа ради работы</span>
+          </div>
+          <div class="meme-cap">Инициатив за год — 47. Доведено до конца — 2. Посчитано хоть кем-нибудь — 0.</div>
+        </div>
+
+        <div class="truth">
+          <div class="tl">Что происходит</div>
+          <div class="tv">Идея приходит сверху без расчёта, без ресурса и без срока жизни. Считать её будет некому, а внедрять — тебе.</div>
+        </div>
+        <div class="truth hot">
+          <div class="tl">Почему это выматывает сильнее, чем работа</div>
+          <div class="tv"><b>Бессмысленная задача стоит дороже тяжёлой.</b> Тяжёлую ты делаешь и видишь результат. Бессмысленную ты делаешь, объясняешь команде, а через три недели её отменяют — и весь этот запас ты потратила в никуда.</div>
+        </div>
+        <div class="truth">
+          <div class="tl">Побочный эффект</div>
+          <div class="tv">Команда перестаёт реагировать на любые новые задачи. Включая те, которые правда важны.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="hcard wide">
+      <div class="hc-hd" style="background:var(--coal);">
+        <div class="hn" style="color:var(--honey);opacity:.8;">05</div>
+        <h3>Совещание на четыре часа</h3>
+      </div>
+      <div class="hc-body">
+        <div class="hc-split">
+          <div>
+            <div class="meme">
+              <div class="meme-hd"><span>Совещание · офлайн, все собрались</span><span>14:00–18:10</span></div>
+              <div class="rc">
+                <div class="rc-h">Что было на совещании</div>
+                <div class="rc-l"><span>Заявлено</span><span class="d"></span><span>1 час</span></div>
+                <div class="rc-l"><span>Фактически</span><span class="d"></span><span>4 ч 10 мин</span></div>
+                <div class="rc-l"><span>Вопросов решено</span><span class="d"></span><span>1</span></div>
+                <div class="rc-l"><span>из них требовавших встречи</span><span class="d"></span><span>0</span></div>
+                <div class="rc-l bad"><span>Разносов при всех</span><span class="d"></span><span>3</span></div>
+                <div class="rc-l bad"><span>из них без мата</span><span class="d"></span><span>0</span></div>
+                <div class="rc-l"><span>Можно выйти</span><span class="d"></span><span>нет</span></div>
+                <div class="rc-l tot"><span>Камилла говорила</span><span class="d"></span><span>4 мин</span></div>
+                <div class="rc-l"><span>Камилла слушала</span><span class="d"></span><span>4 ч 06 мин</span></div>
+                <div class="rc-f">Четыре часа — это не совещание.<br>Это способ показать, кто здесь главный,<br>растянутый на четыре часа.</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="meme">
+              <div class="meme-hd"><span>Рабочий чат · на следующий день</span><span>09:12</span></div>
+              <div class="chat">
+                <div class="msg them"><div class="who">Су-шеф</div>Камилла, а правда с понедельника новый график?</div>
+                <div class="msg me">какой новый график</div>
+                <div class="msg them">Левандовская в общий чат скинула</div>
+                <div class="msg them">там смены переставлены</div>
+                <div class="msg sys">Камилла печатает<span class="dots"><i></i><i></i><i></i></span></div>
+                <div class="msg me">сейчас уточню и вернусь</div>
+                <div class="msg sys">о решении по своей точке Камилла узнала от своей же команды</div>
+              </div>
+              <div class="meme-cap">Тебя не предупредили. Объяснять — тебе.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hc-split" style="margin-top:18px;">
+          <div>
+            <div class="truth hot">
+              <div class="tl">Про мат на совещании</div>
+              <div class="tv">Это не срыв и не «просто такой характер». Это рабочий инструмент: после публичного разноса матом никто не спорит следующие две недели. <b>Инструмент работает. Расплачиваются им люди.</b></div>
+            </div>
+            <div class="truth hot">
+              <div class="tl">Почему офлайн — это отдельно</div>
+              <div class="tv">Экран можно выключить, комнату — нет. Все собраны в одном помещении, все всё видят, встать и уйти нельзя. <b>Это не совещание с элементами грубости. Это публичная процедура, в которой грубость и есть содержание.</b></div>
+            </div>
+            <div class="truth">
+              <div class="tl">Что делают четыре часа</div>
+              <div class="tv">Съедают вечер, который был у тебя на точку, документы и сон. Совещание длиной в смену — это ещё одна смена, просто неоплаченная.</div>
+            </div>
+          </div>
+          <div>
+            <div class="truth hot">
+              <div class="tl">Почему с тобой «нормально»</div>
+              <div class="tv">Потому что ты нужна. Ровные отношения с тобой — не симпатия, а расчёт: пока ты не в списке разбираемых, ты не задаёшь вопросов и держишь точку. <b>Это не привилегия. Это ремень безопасности, пристёгнутый к чужой машине.</b></div>
+            </div>
+            <div class="truth">
+              <div class="tl">И при этом тебя подставляют</div>
+              <div class="tv">«Мы же с тобой нормально общаемся» — и через день решение по твоей точке, о котором ты узнаёшь от своей команды. Хорошее отношение и надёжность — разные вещи, и путать их дорого.</div>
+            </div>
+            <div class="truth">
+              <div class="tl">Что при этом видит зал</div>
+              <div class="tv">Все замечают, кого кроют, а кого нет. Ты сидишь в той же комнате и молчишь — не потому что согласна, а потому что возразить нельзя. <b>Со стороны это выглядит не как «её пощадили», а как «она из их числа».</b> Это тихо стоит тебе доверия команды, и ты об этом даже не узнаешь.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="hcard wide">
+      <div class="hc-hd" style="background:var(--pink);">
+        <div class="hn">06</div>
+        <h3>«Нам нужны такие же, как у них»</h3>
+      </div>
+      <div class="hc-body">
+        <div class="hc-split">
+          <div>
+            <div class="meme">
+              <div class="meme-hd"><span>Вакансия · как её видят наверху</span><span>опубликовано</span></div>
+              <div class="doc">
+                <div class="dl"><b>Ищем:</b><span>сильного су-шефа</span></div>
+                <div class="dl"><b>Опыт:</b><span>только топовые проекты</span></div>
+                <div class="dl"><b>Нужны:</b><span>амбиции и горящие глаза</span></div>
+                <div class="dl"><b>Зарплата:</b><span>по итогам собеседования</span></div>
+                <div class="dl"><b>Выплаты:</b><span>—</span></div>
+                <div class="dl"><b>Отзывы:</b><span>не смотрели</span></div>
+                <span class="stamp">Ждём резюме</span>
+              </div>
+              <div class="meme-cap">На совещании снова пример из лучшего ресторана города. Почему «такие же» сюда не идут — этот вопрос в повестку не входит.</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="meme">
+              <div class="meme-hd"><span>А теперь то же самое, но глазами кандидата</span><span>30 секунд</span></div>
+              <div class="stop">
+                <div class="sh">🔍 [компания] отзывы сотрудников</div>
+                <ul>
+                  <li>«зарплата с задержкой 2 месяца» <i>14 отзывов</i></li>
+                  <li>«ушла без расчёта» <i>отзыв</i></li>
+                  <li>«обещали и не выплатили» <i>отзыв</i></li>
+                  <li>суд по невыплате зарплаты <i>в базе</i></li>
+                  <li>«держится всё на управляющей» <i>отзыв</i></li>
+                </ul>
+                <div class="left"><span>Рейтинг работодателя</span><span>2,1 ★</span></div>
+              </div>
+              <div class="meme-cap">Сильный кандидат гуглит работодателя раньше, чем открывает вакансию. Это занимает полминуты.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hc-split" style="margin-top:18px;">
+          <div>
+            <div class="truth hot">
+              <div class="tl">В чём иллюзия</div>
+              <div class="tv">Сильных людей нельзя «захотеть» — их можно только купить условиями. <b>Суды, задержки и отзывы — это и есть настоящий оффер компании</b>, что бы ни было написано в вакансии. Репутация работодателя тоже актив, и его давно проели.</div>
+            </div>
+            <div class="truth">
+              <div class="tl">Почему сравнение с лучшими особенно обидно</div>
+              <div class="tv">В тех ресторанах, которые ставят в пример, зарплату платят вовремя, продукты оплачивают, а планёрки укладываются в час. Сравнивают результат, не сравнивая условия.</div>
+            </div>
+          </div>
+          <div>
+            <div class="truth hot">
+              <div class="tl">На чём на самом деле держится персонал</div>
+              <div class="tv">Люди приходят на компанию, а остаются на человека. <b>Единственная причина, по которой команда всё ещё на месте, — это ты.</b> Именно поэтому наверху и не видят проблемы: с их стороны всё же работает.</div>
+            </div>
+            <div class="truth">
+              <div class="tl">Чем это закончится</div>
+              <div class="tv">В тот день, когда ты уйдёшь, станет ровно видно, сколько стоила репутация компании на самом деле. Это будет очень быстрый день — и очень наглядный.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="notyou">
+          <b>Запомни главное</b>
+          Ни один из этих шести пунктов не решается тем, что ты станешь собраннее, терпеливее или организованнее. Ты уже собранная, терпеливая и организованная — именно поэтому конструкция до сих пор держится. Держится на тебе.
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ THE CREDIT CARD ============ -->
+<section id="card">
+  <div class="alarm rv">
+    <div class="alarm-hd">
+      <div class="an">И отдельно · это самая важная страница здесь</div>
+      <h3>Про твою кредитную карту</h3>
+    </div>
+    <div class="alarm-body">
+      <div class="hc-split">
+        <div>
+          <div class="meme">
+            <div class="meme-hd"><span>Кредитная карта · выписка</span><span>месяц</span></div>
+            <div class="rc">
+              <div class="rc-h">Операции по карте</div>
+              <div class="rc-l"><span>Перевод — повар</span><span class="d"></span><span>28 000 ₽</span></div>
+              <div class="rc-l"><span>Перевод — су-шеф</span><span class="d"></span><span>35 000 ₽</span></div>
+              <div class="rc-l"><span>Перевод — официант</span><span class="d"></span><span>19 500 ₽</span></div>
+              <div class="rc-l"><span>Перевод — бармен</span><span class="d"></span><span>22 000 ₽</span></div>
+              <div class="rc-l"><span>Свои траты</span><span class="d"></span><span>0 ₽</span></div>
+              <div class="rc-l tot"><span>Долг по карте</span><span class="d"></span><span>104 500 ₽</span></div>
+              <div class="rc-l bad"><span>Льготный период</span><span class="d"></span><span>истёк</span></div>
+              <div class="rc-l bad"><span>Проценты</span><span class="d"></span><span>платишь ты</span></div>
+              <div class="rc-l bad"><span>Компенсировано компанией</span><span class="d"></span><span>0 ₽</span></div>
+              <div class="rc-f">Расписок нет.<br>Договорённость — устная.<br>Долг компании перед тобой нигде не зафиксирован.</div>
+            </div>
+            <div class="meme-cap">Ты не «выручила команду». Ты выдала своей компании беспроцентный кредит — под проценты, которые платишь сама.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="truth hot">
+            <div class="tl">Что это на самом деле</div>
+            <div class="tv">Это не помощь людям, это кредитование работодателя за твой счёт. <b>Обязательство компании перед сотрудниками твой перевод не закрывает</b> — оно просто становится невидимым. А её долг перед тобой не существует нигде, кроме вашей памяти.</div>
+          </div>
+          <div class="truth hot">
+            <div class="tl">Почему это опаснее всего остального на странице</div>
+            <div class="tv">Пока люди получают деньги вовремя, <b>у компании нет ни одной причины начать платить вовремя</b>. Твоя карта — единственное, что мешает проблеме стать заметной. Ты не чинишь поломку, ты её маскируешь. И счёт за это приходит лично тебе, с процентами.</div>
+          </div>
+          <div class="truth">
+            <div class="tl">Чем это кончается по деньгам</div>
+            <div class="tv">Долг растёт быстрее, чем его закрывают. Кредитная история — твоя. Проценты — твои. Риск, что не вернут, — тоже твой, и он тем выше, чем дольше это длится.</div>
+          </div>
+          <div class="truth">
+            <div class="tl">И по-человечески</div>
+            <div class="tv">Если однажды ты не сможешь заплатить — виноватой почувствуешь себя ты. Хотя не платила зарплату всё это время не ты.</div>
+          </div>
+
+          <div class="todo">
+            <div class="tdl">Что стоит сделать — не «когда-нибудь», а в ближайшие дни</div>
+            <ol>
+              <li>Перестать. Это первое и главное, и это не предательство команды.</li>
+              <li>Собрать все переводы: даты, суммы, кому. Выписка из банка уже всё сохранила.</li>
+              <li>Написать сумму долга компании письменно — в чат, на почту, куда угодно, где остаётся текст. Устные договорённости здесь не считаются.</li>
+              <li>Дальше — только по расписке. Долг без бумаги называется подарком.</li>
+              <li>Команде сказать правду: задерживает компания, а не ты. Они это переживут — они и так всё понимают.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ QUIZ ============ -->
+<section id="test">
+  <h2 class="sec rv">Сначала — быстрый тест</h2>
+  <p class="sec-lead rv">Отмечай всё, что про тебя. Считать не надо, само посчитается. Врать смысла нет, тебя тут никто не видит.</p>
+
+  <div class="quiz rv">
+    <div class="quiz-hd">
+      <h3>Ты сейчас на какой стадии?</h3>
+      <p>14 галочек · честный режим · результат обновляется сразу</p>
+    </div>
+    <div class="quiz-body">
+      <ul class="qlist" id="qlist">
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Сверяла зарплатную ведомость руками, потому что программы нет</span></label></li>
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Доказывала, что в табеле всё правильно, дольше часа</span></label></li>
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Выходила в смену вместо заболевшего</span></label></li>
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Объясняла команде, почему зарплата опять не сегодня</span></label></li>
+        <li><label class="qi" id="qcard"><input type="checkbox"><span class="box">✓</span><span class="t">Переводила сотрудникам зарплату со своей карты</span></label></li>
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Ставила в стоп-лист то, что просто не оплатили</span></label></li>
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Внедряла идею, в которую сама не верила</span></label></li>
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Сидела на совещании дольше трёх часов</span></label></li>
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Считала выходные за месяц и сбилась на нуле</span></label></li>
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Писала длинное сообщение начальству и стёрла его</span></label></li>
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Просыпалась ночью и первым делом открывала рабочий чат</span></label></li>
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Узнавала решение по своей точке от своей же команды</span></label></li>
+        <li><label class="qi"><input type="checkbox"><span class="box">✓</span><span class="t">Объясняла новенькой правило, с которым сама не согласна</span></label></li>
+        <li><label class="qi" id="qhh"><input type="checkbox"><span class="box">✓</span><span class="t">Открывала hh.ru «просто посмотреть»</span></label></li>
+      </ul>
+
+      <div class="verdict">
+        <div class="score"><span id="scoreNum">0</span><small>из 14</small></div>
+        <div class="vtext">
+          <div class="vt-h" id="vh">Пока ничего не отмечено</div>
+          <div class="vt-p" id="vp">Начни ставить галочки — диагноз соберётся сам. Это единственный тест в твоей жизни, где не надо готовить точку к проверке.</div>
+          <div class="vt-x" id="vx"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ STAGES ============ -->
+<section id="stages">
+  <h2 class="sec rv">Пять стадий, по порядку</h2>
+  <p class="sec-lead rv">У каждой — срок, цитата, вещдок и две шкалы: сколько тебя ещё осталось и сколько давления уже уходит вниз, на команду.</p>
+
+  <!-- STAGE 1 -->
+  <article class="stage rv">
+    <div class="st-hd" style="background:var(--s1);">
+      <div class="st-num">1</div>
+      <div class="st-t">
+        <h3>Отрицание</h3>
+        <div class="when">1–3 месяца · «мне дали точку и доверие»</div>
+      </div>
+    </div>
+    <div class="st-body">
+      <p class="quote" style="color:var(--s1);">«Тут просто давно не было хозяина. Разберусь — и всё встанет на место.»</p>
+
+      <div class="grid2">
+        <div>
+          <div class="facts">
+            <div class="fact"><div class="fl">Прилетает сверху</div><div class="fv">План, который никто не считал по твоей точке, и универсальный ответ на любой вопрос: <b>«ты же управляющая, решай»</b>.</div></div>
+            <div class="fact"><div class="fl">Что ты делаешь</div><div class="fv">Закрываешь дыры собой. Выходишь в смены, сводишь отчёты ночью, наверх не жалуешься — <b>разберусь сама</b>.</div></div>
+            <div class="fact"><div class="fl">Что достаётся команде</div><div class="fv">Почти ничего. Ты пока фильтр, а не проводник. Люди видят собранного руководителя и радуются.</div></div>
+            <div class="fact"><div class="fl">Что с ценностями</div><div class="fv">Целы и даже подтверждены: <b>«я буду другим руководителем, чем те, кого я видела»</b>.</div></div>
+          </div>
+          <div class="bars">
+            <div class="bar-r"><div class="bl"><span>Запас себя</span><b>90%</b></div><div class="track"><div class="fill" style="--w:90%;background:var(--mint);"></div></div></div>
+            <div class="bar-r"><div class="bl"><span>Уходит вниз</span><b>5%</b></div><div class="track"><div class="fill" style="--w:5%;background:var(--tomato);"></div></div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="meme">
+            <div class="meme-hd"><span>Вводная от сети</span><span>день 1</span></div>
+            <div class="chat">
+              <div class="msg them"><div class="who">Левандовская</div>Поздравляю с назначением! 🎉 У тебя полная свобода в управлении</div>
+              <div class="msg me">Спасибо! А по штату что?</div>
+              <div class="msg them">Штат по нормативу</div>
+              <div class="msg me">А норматив — это сколько человек?</div>
+              <div class="msg sys">операционный печатает<span class="dots"><i></i><i></i><i></i></span></div>
+              <div class="msg sys">с 2024 года</div>
+            </div>
+            <div class="meme-cap">Свобода — это когда отвечаешь за всё. Полномочия — согласовать закупку зелени в общем чате.</div>
+          </div>
+
+          <div class="tell"><b>Как понять, что ты здесь</b>Ты ещё говоришь «разберусь сама» — и правда так думаешь.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- STAGE 2 -->
+  <article class="stage rv">
+    <div class="st-hd" style="background:var(--s2);">
+      <div class="st-num">2</div>
+      <div class="st-t">
+        <h3>Гнев</h3>
+        <div class="when">3–6 месяцев · «это математически невозможно»</div>
+      </div>
+    </div>
+    <div class="st-body">
+      <p class="quote" style="color:var(--s2);">«Я не спорю про стратегию. Я третий час защищаю ставку своего повара перед директором по зарплате.»</p>
+
+      <div class="grid2">
+        <div>
+          <div class="facts">
+            <div class="fact"><div class="fl">Прилетает сверху</div><div class="fv">Ведомость, которая не сходится, «это твоя зона ответственности» и разбор при всех на совещании.</div></div>
+            <div class="fact"><div class="fl">Что ты делаешь</div><div class="fv">Споришь цифрами. Присылаешь табели, графики, фотографии журнала смен. <b>Ещё веришь, что арифметика — это аргумент.</b></div></div>
+            <div class="fact"><div class="fl">Что достаётся команде</div><div class="fv">Раздражение, которое ты уже не успеваешь отфильтровать. Первые срывы — и стыд за них в ту же ночь.</div></div>
+            <div class="fact"><div class="fl">Что с ценностями</div><div class="fv">Названы вслух на совещании — и услышаны как «негатив». Самый обидный момент всего пути.</div></div>
+          </div>
+          <div class="bars">
+            <div class="bar-r"><div class="bl"><span>Запас себя</span><b>70%</b></div><div class="track"><div class="fill" style="--w:70%;background:var(--mint);"></div></div></div>
+            <div class="bar-r"><div class="bl"><span>Уходит вниз</span><b>15%</b></div><div class="track"><div class="fill" style="--w:15%;background:var(--tomato);"></div></div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="meme">
+            <div class="meme-hd"><span>Защита ведомости</span><span>2 ч 40 мин</span></div>
+            <div class="chat">
+              <div class="msg them"><div class="who">Алла · директор по зарплате</div>у повара 19 смен<span class="tm">17:20</span></div>
+              <div class="msg me">21. Вот график, вот табель</div>
+              <div class="msg them">у меня 19</div>
+              <div class="msg me">📎 фото журнала смен</div>
+              <div class="msg them">тогда у су-шефа 208 часов</div>
+              <div class="msg me">в месяце столько не бывает</div>
+              <div class="msg them">значит где-то ошибка</div>
+              <div class="msg me">да. у вас</div>
+              <div class="msg them">я считала</div>
+              <div class="msg sys">Камилла печатает<span class="dots"><i></i><i></i><i></i></span></div>
+              <div class="msg sys">(абзац, который лучше не отправлять)</div>
+              <div class="msg sys">Камилла удаляет</div>
+              <div class="msg me">хорошо. пришлю разбивку по каждому дню<span class="tm">20:00</span></div>
+            </div>
+            <div class="meme-cap">Ты не спорила про стратегию. Ты два часа сорок минут доказывала, что в месяце не бывает двухсот восьми часов.</div>
+          </div>
+
+          <div class="tell"><b>Как понять, что ты здесь</b>У тебя в галерее телефона лежат фотографии табеля. На всякий случай. Ты уже знаешь, что случай будет.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- STAGE 3 -->
+  <article class="stage rv">
+    <div class="st-hd" style="background:var(--s3);color:var(--coal);">
+      <div class="st-num">3</div>
+      <div class="st-t">
+        <h3>Торг</h3>
+        <div class="when">6–12 месяцев · режим буфера, самая дорогая стадия</div>
+      </div>
+    </div>
+    <div class="st-body">
+      <p class="quote" style="color:#B07E12;">«Ладно. Я буду буфером. Команда не должна это чувствовать.»</p>
+
+      <div class="grid2">
+        <div>
+          <div class="facts">
+            <div class="fact"><div class="fl">Прилетает сверху</div><div class="fv">План вверх, ФОТ вниз, «ищите резервы внутри». И обещание: <b>потерпи до конца сезона, потом дадим людей</b>.</div></div>
+            <div class="fact"><div class="fl">Что ты делаешь</div><div class="fv">Закрываешь собой всё: недостачи, переработки, чужие смены. <b>А потом и зарплату — со своей карты, чтобы люди не почувствовали задержку.</b> Наверх докладываешь, что всё под контролем.</div></div>
+            <div class="fact"><div class="fl">Что достаётся команде</div><div class="fv">Пока защищены — но уже слышат «потерпите, я решаю вопрос». Это первая фраза, которую ты говоришь чужими словами.</div></div>
+            <div class="fact"><div class="fl">Что с ценностями</div><div class="fv">Обменяны дважды: на обещания сверху и на спокойствие команды. <b>Обещания не выполнят.</b></div></div>
+          </div>
+          <div class="bars">
+            <div class="bar-r"><div class="bl"><span>Запас себя</span><b>45%</b></div><div class="track"><div class="fill" style="--w:45%;background:var(--mint);"></div></div></div>
+            <div class="bar-r"><div class="bl"><span>Уходит вниз</span><b>35%</b></div><div class="track"><div class="fill" style="--w:35%;background:var(--tomato);"></div></div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="meme">
+            <div class="meme-hd"><span>График на месяц</span><span>«я норм»</span></div>
+            <div class="cal">
+              <div class="cal-g" id="calGrid"></div>
+              <div class="cal-lg">
+                <span><i style="background:var(--tomato);"></i>Смена — 31</span>
+                <span><i style="background:var(--paper-lo);"></i>Выходной — 0</span>
+              </div>
+            </div>
+            <div class="meme-cap">Буфер всегда думает, что он невидимый. Спойлер: су-шеф уже спрашивал у бармена, всё ли у тебя нормально.</div>
+          </div>
+
+          <div class="tell"><b>Как понять, что ты здесь</b>Ты начала платить за работодателя из своего кармана — и назвала это заботой о команде. Это и есть вершина буфера: дороже уже не бывает.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- STAGE 4 -->
+  <article class="stage rv">
+    <div class="st-hd" style="background:var(--s4);">
+      <div class="st-num">4</div>
+      <div class="st-t">
+        <h3>Апатия</h3>
+        <div class="when">12–18 месяцев · буфер сдался, включилась трансляция</div>
+      </div>
+    </div>
+    <div class="st-body">
+      <p class="quote" style="color:var(--s4);">«Я больше не спорю. Пришло сверху — довела вниз. Дальше не моя война.»</p>
+
+      <div class="grid2">
+        <div>
+          <div class="facts">
+            <div class="fact"><div class="fl">Прилетает сверху</div><div class="fv">То же самое — но теперь без сопротивления, поэтому чаще и жёстче. <b>Молчание читают как согласие.</b></div></div>
+            <div class="fact"><div class="fl">Что ты делаешь</div><div class="fv">Транслируешь решения, которых не разделяешь, почти слово в слово. Экономишь силы на объяснениях, которые ничего не меняют.</div></div>
+            <div class="fact"><div class="fl">Что достаётся команде</div><div class="fv">Всё: штрафы, графики, «так решили наверху» — и твоя усталость сверх того. Люди начинают уходить.</div></div>
+            <div class="fact"><div class="fl">Что с ценностями</div><div class="fv">Не спрятаны — просто перестали участвовать в решениях. Ты их помнишь, но больше на них не опираешься.</div></div>
+          </div>
+          <div class="bars">
+            <div class="bar-r"><div class="bl"><span>Запас себя</span><b>20%</b></div><div class="track"><div class="fill" style="--w:20%;background:var(--mint);"></div></div></div>
+            <div class="bar-r"><div class="bl"><span>Уходит вниз</span><b>60%</b></div><div class="track"><div class="fill" style="--w:60%;background:var(--tomato);"></div></div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="meme">
+            <div class="meme-hd"><span>Планёрка сети · слайд 14</span><span>Q3</span></div>
+            <div class="slide">
+              <div class="slide-top">
+                <div class="sm">Стратегия развития</div>
+                <div class="big">РОСТ 30%</div>
+                <div class="sub">без дополнительных вложений в персонал</div>
+              </div>
+              <div class="slide-real">
+                <div class="rl">Что в это время на точке</div>
+                <ul>
+                  <li>два повара вместо четырёх</li>
+                  <li>су-шеф на больничном вторую неделю</li>
+                  <li>официант — новенькая, третий день</li>
+                  <li>посудомойка уволилась в пятницу</li>
+                </ul>
+              </div>
+            </div>
+            <div class="meme-cap">Камилла кивает и записывает. Записывать нечего, но кивать надо.</div>
+          </div>
+
+          <div class="tell"><b>Как понять, что ты здесь</b>Ты сказала команде «так решили наверху» — и не стала объяснять почему. Даже себе.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- STAGE 5 -->
+  <article class="stage rv">
+    <div class="st-hd" style="background:var(--s5);">
+      <div class="st-num">5</div>
+      <div class="st-t">
+        <h3>Принятие</h3>
+        <div class="when">18+ месяцев · конец самообмана, начало расчёта</div>
+      </div>
+    </div>
+    <div class="st-body">
+      <p class="quote" style="color:var(--s5);">«Сеть не изменится. Вопрос только в том, кем я в ней работаю.»</p>
+
+      <div class="grid2">
+        <div>
+          <div class="facts">
+            <div class="fact"><div class="fl">Прилетает сверху</div><div class="fv">Внезапно — предложение вырасти: куст, вторая точка, «ты же наша». <b>Ровно тогда, когда ты собралась уходить.</b></div></div>
+            <div class="fact"><div class="fl">Что ты делаешь</div><div class="fv">Считаешь, а не терпишь: сроки, передачу дел, инвентаризацию, кого из команды забираешь с собой.</div></div>
+            <div class="fact"><div class="fl">Что достаётся команде</div><div class="fv">Впервые за долгое время — честный разговор без «потерпите». Люди чувствуют это раньше, чем ты скажешь вслух.</div></div>
+            <div class="fact"><div class="fl">Что с ценностями</div><div class="fv">Возвращаются вопросом: <b>«я всё ещё защищаю людей — или уже объясняю им, почему так надо?»</b></div></div>
+          </div>
+          <div class="bars">
+            <div class="bar-r"><div class="bl"><span>Запас себя</span><b>оценке не подлежит</b></div><div class="track"><div class="fill" style="--w:50%;background:linear-gradient(90deg,var(--mint),var(--mustard));"></div></div></div>
+            <div class="bar-r"><div class="bl"><span>Развилка</span><b>50 / 50</b></div><div class="track"><div class="fill" style="--w:100%;background:linear-gradient(90deg,var(--mint) 50%,var(--violet) 50%);"></div></div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="meme">
+            <div class="meme-hd"><span>Счёт, пожалуйста</span><span>стол 1</span></div>
+            <div class="rc">
+              <div class="rc-h">Сеть · ваш персональный счёт</div>
+              <div class="rc-l"><span>Лет отдано</span><span class="d"></span><span>2</span></div>
+              <div class="rc-l"><span>Смен сверх графика</span><span class="d"></span><span>не считали</span></div>
+              <div class="rc-l"><span>Переработки оплачены</span><span class="d"></span><span>0 ₽</span></div>
+              <div class="rc-l"><span>«Потерпи до сезона»</span><span class="d"></span><span>×4</span></div>
+              <div class="rc-l"><span>из них выполнено</span><span class="d"></span><span>0</span></div>
+              <div class="rc-l"><span>Нервных клеток</span><span class="d"></span><span>—</span></div>
+              <div class="rc-l tot"><span>Итого получено</span><span class="d"></span><span>опыт, репутация</span></div>
+              <div class="rc-f">Чаевые не оставлены.<br>Обслуживание уже включено в стоимость нервов.<br>Спасибо, что были с нами!</div>
+            </div>
+            <div class="meme-cap">На этой стадии ты впервые считаешь не план точки, а свой собственный.</div>
+          </div>
+
+          <div class="tell"><b>Как понять, что ты здесь</b>Ты открыла hh не «посмотреть рынок», а посмотреть конкретные вакансии. И сохранила две.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<hr class="rule">
+
+<!-- ============ BINGO ============ -->
+<section id="bingo">
+  <h2 class="sec rv">Бинго планёрки</h2>
+  <p class="sec-lead rv">Открывай на следующем совещании и отмечай. Соберёшь ряд — можешь идти домой. (Не можешь. Но приятно.)</p>
+
+  <div class="bingo-wrap rv">
+    <div class="bingo-hd">
+      <div>
+        <h3>Карточка № 1</h3>
+        <p>Ряд по горизонтали, вертикали или диагонали — бинго</p>
+      </div>
+      <button type="button" id="bReset">Сбросить</button>
+    </div>
+    <div class="bg" id="bingoGrid"></div>
+    <div class="bingo-ft" id="bingoMsg">Отмечено: 0. Планёрка ещё даже не началась.</div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ PHRASEBOOK ============ -->
+<section id="phrasebook">
+  <h2 class="sec rv">Разговорник: сетевой → человеческий</h2>
+  <p class="sec-lead rv">Жми на карточку, чтобы увидеть перевод. Осторожно: обратно уже не развидишь.</p>
+
+  <div class="pb-grid rv" id="pbGrid"></div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ ACHIEVEMENTS ============ -->
+<section id="ach">
+  <h2 class="sec rv">Твои достижения</h2>
+  <p class="sec-lead rv">Ни одно из них не идёт в трудовую. Но открыты они честно.</p>
+
+  <div class="ach-grid rv">
+    <div class="ach"><div class="ic">🌙</div><div><div class="an">Ночной бухгалтер</div><div class="ad">Свести отчёты после закрытия, потому что днём было некогда</div><div class="st">✓ Открыто</div></div></div>
+    <div class="ach"><div class="ic">🥄</div><div><div class="an">Человек-оркестр</div><div class="ad">За одну смену побывать хостес, барменом, курьером и посудомойкой</div><div class="st">✓ Открыто</div></div></div>
+    <div class="ach"><div class="ic">🗑</div><div><div class="an">Мастер удалённых сообщений</div><div class="ad">Написать всю правду начальству и стереть до отправки</div><div class="st">✓ Открыто</div></div></div>
+    <div class="ach"><div class="ic">💳</div><div><div class="an">Личный фонд оплаты труда</div><div class="ad">Выдать команде зарплату со своей карты, пока компания молчит</div><div class="st">✓ Открыто — и лучше бы не было</div></div></div>
+    <div class="ach"><div class="ic">🧮</div><div><div class="an">Адвокат табеля</div><div class="ad">Доказать, что в месяце не бывает двухсот восьми часов</div><div class="st">✓ Открыто</div></div></div>
+    <div class="ach"><div class="ic">🛡</div><div><div class="an">Живой щит</div><div class="ad">Принять на себя разбор, который предназначался команде</div><div class="st">✓ Открыто</div></div></div>
+    <div class="ach"><div class="ic">📞</div><div><div class="an">Всегда на связи</div><div class="ad">Ответить в рабочий чат в свой выходной. Быстрее, чем маме</div><div class="st">✓ Открыто</div></div></div>
+    <div class="ach"><div class="ic">🎭</div><div><div class="an">Синхронный переводчик</div><div class="ad">Объяснить команде решение, с которым сама не согласна</div><div class="st">✓ Открыто</div></div></div>
+    <div class="ach locked"><div class="ic">🚪</div><div><div class="an">Выход по расчёту</div><div class="ad">Уйти по своей дате, а не когда станет невыносимо</div><div class="st">🔒 Не открыто</div></div></div>
+    <div class="ach locked"><div class="ic">📵</div><div><div class="an">Суббота без чата</div><div class="ad">Провести выходной, ни разу не открыв рабочую переписку</div><div class="st">🔒 Не открыто</div></div></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ FORK ============ -->
+<section id="fork">
+  <h2 class="sec rv">И вот тут развилка</h2>
+  <p class="sec-lead rv">После пятой стадии линия расходится надвое. Шутки, честно предупреждаем, здесь заканчиваются — но ненадолго.</p>
+
+  <div class="fork-grid rv">
+    <article class="path">
+      <div class="path-hd" style="background:var(--mint);">
+        <div class="pn">Вариант А · примерно 50%</div>
+        <h3>Разрыв</h3>
+        <p>Ты уходишь и обрываешь цепочку на себе</p>
+      </div>
+      <div class="path-body">
+        <ul>
+          <li>У тебя есть имя и контакты вне сети — рынок тебя знает</li>
+          <li>Команде говоришь правду, а не «всё нормально»</li>
+          <li>Готовишь преемника, а не оставляешь пепелище</li>
+          <li>Считаешь выход по датам, а не «когда станет невыносимо»</li>
+        </ul>
+        <div class="pblock">
+          <div class="pl">Цена</div>
+          <div class="pv">Чувство, что бросила своих. Передача дел, инвентаризация и недостачи, которые попробуют повесить на тебя. Два-три месяца, чтобы снова начать доверять работодателю.</div>
+        </div>
+        <div class="pblock">
+          <div class="pl">Что получаешь</div>
+          <div class="pv">Репутацию, часть команды и способность руководить иначе. В этом бизнесе люди уходят за управляющим — это норма, а не предательство.</div>
+        </div>
+        <div class="moment">Первая суббота без рабочего чата. Телефон молчит так громко, что часа два реально страшно.</div>
+      </div>
+    </article>
+
+    <article class="path">
+      <div class="path-hd" style="background:var(--violet);">
+        <div class="pn">Вариант Б · тоже примерно 50%</div>
+        <h3>Ассимиляция</h3>
+        <p>Ты становишься тем самым звеном</p>
+      </div>
+      <div class="path-body">
+        <ul>
+          <li>Перестала спорить с планами и начала спорить с людьми</li>
+          <li>Сама вводишь штрафы, которые год назад называла дикостью</li>
+          <li>Фраза «у нас все через это проходят» звучит уже от тебя</li>
+          <li>Повышение пришло раньше, чем силы уйти</li>
+        </ul>
+        <div class="pblock">
+          <div class="pl">Цена</div>
+          <div class="pv">Ты больше не жертва системы, а её исправный механизм. И это, в отличие от роли буфера, неплохо оплачивается.</div>
+        </div>
+        <div class="pblock">
+          <div class="pl">Что получаешь</div>
+          <div class="pv">Следующая Камилла придёт к тебе в подчинение и пройдёт ровно тот же путь. Круг замкнулся, и звеном стала ты.</div>
+        </div>
+        <div class="moment">Момент, когда объясняешь новенькой чужое решение своими словами — и уже не морщишься.</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="nothird rv">
+    <h3>Третьего пути нет</h3>
+    <p>Держать оборону бесконечно невозможно: <b>буфер не бывает вечным</b>. Он либо уходит, либо становится проводником. Обычно на это уходит от 18 до 30 месяцев.</p>
+    <p>Всё, что выглядит как «остаться и не сломаться», на деле означает «я ещё не дошла до развилки».</p>
+    <p>Точка невозврата, кстати, фиксируется довольно точно: <b>первый раз, когда ты объясняешь команде чужое решение как своё — и находишь этому оправдание.</b></p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============ FACTORS ============ -->
+<section id="factors">
+  <h2 class="sec rv">Что решает, куда ты свернёшь</h2>
+  <p class="sec-lead rv">Не сила характера. Четыре вещи — и на три из них можно повлиять со стороны, буквально одним разговором.</p>
+
+  <div class="fx-grid rv">
+    <div class="fx">
+      <div class="fn">01</div>
+      <h4>Полномочия против ответственности</h4>
+      <p>Если ты не решаешь ставки, график и найм — ты не руководитель, а буфер. А буфер изнашивается строго по расписанию.</p>
+      <div class="can n">На это влияет сеть</div>
+    </div>
+    <div class="fx">
+      <div class="fn">02</div>
+      <h4>Зеркало вне сети</h4>
+      <p>На твоём уровне внутри компании собеседников нет: вниз нельзя, вверх опасно. Без внешнего человека торг длится годами.</p>
+      <div class="can y">Решается одним разговором</div>
+    </div>
+    <div class="fx">
+      <div class="fn">03</div>
+      <h4>Понимание рынка</h4>
+      <p>Сильные управляющие в дефиците. Уход — не в пустоту. Об этом ты забываешь первой, обычно на третьей стадии.</p>
+      <div class="can y">Проверяется за вечер</div>
+    </div>
+    <div class="fx">
+      <div class="fn">04</div>
+      <h4>Команда как якорь</h4>
+      <p>Лояльность вниз держит дольше денег. Она же превращается в вину, которая не даёт уйти — и в итоге бьёт по той же команде.</p>
+      <div class="can y">Об этом можно говорить вслух</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTRO ============ -->
+<section id="outro">
+  <div class="outro rv">
+    <div class="oh">Камилла, короче</div>
+    <p>Если ты дочитала и было смешно — отлично, значит силы ещё есть.</p>
+    <p>Если было смешно и немножко больно — это нормально, так и задумано.</p>
+    <p>Если было не смешно совсем — <b>это самый важный сигнал на всей странице</b>, и его стоит с кем-нибудь обсудить. Желательно не в рабочем чате.</p>
+    <div class="sig">— сделано специально для тебя</div>
+  </div>
+</section>
+
+<footer>
+  <p class="fine"><b>Мелким шрифтом.</b> Это модель, а не диагноз. Стадии смешиваются, повторяются и откатываются назад, сроки у каждого свои, а у управляющей путь обычно длиннее — её дольше держат ответственность и люди. Схема полезна как язык для разговора: чтобы можно было ткнуть пальцем «я вот здесь» — и бесполезна как приговор. Если дело дойдёт до здоровья, сна или состояния, которое не проходит месяцами, это разговор уже не с инфографикой, а со специалистом.</p>
+  <div class="meta">
+    <span>Пять стадий и развилка</span><i>·</i>
+    <span>Личный экземпляр</span><i>·</i>
+    <span>Тираж 1 экз.</span><i>·</i>
+    <span>Все совпадения не случайны</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  var rv = [].slice.call(document.querySelectorAll('.rv'));
+  function revealAll(){ rv.forEach(function(el){ el.classList.add('in'); }); }
+
+  /* Safety net. Whatever happens below, the page must never stay blank:
+     if the observer never fires or any block throws, everything shows. */
+  setTimeout(revealAll, 2500);
+  window.addEventListener('error', revealAll);
+  function safely(fn){ try { fn(); } catch (e) { revealAll(); } }
+
+  /* ---------- reveal on scroll ---------- */
+  safely(function(){
+    if (!('IntersectionObserver' in window)) { revealAll(); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+    rv.forEach(function(el){ io.observe(el); });
+  });
+
+  /* ---------- calendar: 31 shifts, 0 days off ---------- */
+  safely(function(){
+    var cal = document.getElementById('calGrid');
+    if (!cal) return;
+    var frag = document.createDocumentFragment();
+    for (var d = 1; d <= 31; d++) {
+      var c = document.createElement('div');
+      c.textContent = d;
+      frag.appendChild(c);
+    }
+    cal.appendChild(frag);
+  });
+
+  /* ---------- quiz ---------- */
+  safely(function(){
+  var boxes = [].slice.call(document.querySelectorAll('#qlist input[type=checkbox]'));
+  var scoreNum = document.getElementById('scoreNum');
+  var vh = document.getElementById('vh'), vp = document.getElementById('vp'), vx = document.getElementById('vx');
+  var hhBox = document.querySelector('#qhh input');
+  var cardBox = document.querySelector('#qcard input');
+
+  var verdicts = [
+    {max:0,  h:'Пока ничего не отмечено',
+             p:'Начни ставить галочки — диагноз соберётся сам. Это единственный тест в твоей жизни, где не надо готовить точку к проверке.'},
+    {max:3,  h:'Стадия 1 · Отрицание',
+             p:'Ты либо в первом квартале на должности, либо не управляющая. Поздравляем и с тем, и с другим. Сохрани эту страницу, пригодится месяцев через восемь.'},
+    {max:6,  h:'Стадия 2 · Гнев',
+             p:'Ты ещё споришь и ещё веришь, что аргумент работает. Береги это состояние — оно заканчивается быстрее, чем кажется, и обратно само не возвращается.'},
+    {max:9,  h:'Стадия 3 · Торг. Классический буфер',
+             p:'Ты гасишь собой всё, что летит сверху, и уверена, что команда не замечает. Команда замечает. Су-шеф уже спрашивал у бармена, всё ли у тебя нормально.'},
+    {max:12, h:'Стадия 4 · Апатия',
+             p:'Ты уже не гасишь, а транслируешь. Это не приговор и не про твой характер — так устроена конструкция, в которой ты работаешь. Но это уже происходит, и лучше назвать это вслух.'},
+    {max:14, h:'Стадия 5 · Принятие',
+             p:'Ты не тест проходишь — ты ставишь галочки по памяти. Значит, самообман закончился и начался расчёт. Листай до развилки, там самое важное.'}
+  ];
+
+  function update(){
+    var n = 0;
+    boxes.forEach(function(b){ if (b.checked) n++; });
+    scoreNum.textContent = n;
+
+    var v = verdicts[verdicts.length - 1];
+    for (var i = 0; i < verdicts.length; i++) {
+      if (n <= verdicts[i].max) { v = verdicts[i]; break; }
+    }
+    vh.textContent = v.h;
+    vp.textContent = v.p;
+
+    if (cardBox && cardBox.checked) {
+      vx.textContent = 'И ты платила зарплату со своей карты. Стадия тут вообще не главное — вернись к красному блоку выше, это самое важное на всей странице.';
+    } else if (hhBox && hhBox.checked) {
+      vx.textContent = 'И да — ты открывала hh. Ты уже всё решила, просто ещё не сказала вслух.';
+    } else if (n >= 11) {
+      vx.textContent = 'Единственная неотмеченная галочка — hh. Пока.';
+    } else {
+      vx.textContent = '';
+    }
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', update); });
+  update();
+  });
+
+  /* ---------- bingo ---------- */
+  safely(function(){
+  var phrases = [
+    'Это твоя зона ответственности',
+    'Мы тебе полностью доверяем',
+    'Нужно быть гибче',
+    'Команда — зеркало руководителя',
+    'Давай без негатива в общем чате',
+    'Дай результат, я не хочу знать как',
+    'Ищите резервы внутри',
+    'Потерпи до конца сезона',
+    'Приходил тайный гость',
+    'У всех точек такие же условия',
+    'Ты же управляющая',
+    'Это не обсуждается',
+    'У меня появилась идея',
+    'Внедряем с понедельника',
+    'Сверься с Аллой',
+    'Зарплата будет, чуть позже',
+    'Поставщик подождёт',
+    'У нас все через это проходят',
+    'Мы тут как семья',
+    'Вот в том ресторане умеют',
+    'Нам нужны такие же',
+    'Кто, если не ты',
+    'Мы в тебя верим',
+    'Совещание на часик'
+  ];
+
+  var grid = document.getElementById('bingoGrid');
+  var msg = document.getElementById('bingoMsg');
+  var cells = [];
+
+  if (grid) {
+    var pi = 0;
+    for (var idx = 0; idx < 25; idx++) {
+      var cell = document.createElement('div');
+      if (idx === 12) {
+        cell.className = 'bc free';
+        cell.textContent = '★ План подняли, людей не дали';
+        cell.dataset.on = '1';
+      } else {
+        cell.className = 'bc';
+        /* guard: a short phrase list must never print "undefined" into the card */
+        cell.textContent = phrases[pi % phrases.length];
+        pi++;
+        cell.dataset.on = '0';
+        cell.setAttribute('role', 'button');
+        cell.setAttribute('tabindex', '0');
+      }
+      grid.appendChild(cell);
+      cells.push(cell);
+    }
+  }
+
+  var lines = [];
+  for (var r = 0; r < 5; r++) lines.push([r*5, r*5+1, r*5+2, r*5+3, r*5+4]);
+  for (var c2 = 0; c2 < 5; c2++) lines.push([c2, c2+5, c2+10, c2+15, c2+20]);
+  lines.push([0,6,12,18,24]);
+  lines.push([4,8,12,16,20]);
+
+  var msgs = [
+    'Отмечено: 0. Планёрка ещё даже не началась.',
+    'Одна. Это была разминка.',
+    'Две. Дальше пойдёт быстрее, обещаем.',
+    'Три за первые пять минут — нормальный темп.',
+    'Четыре. Ты уже перестала записывать, да?',
+    'Пять. Половина карточки не отмечена только потому, что совещание ещё идёт.',
+    'Шесть. Кто-нибудь вообще смотрит на слайды?',
+    'Семь. Это уже не бинго, это стенограмма.',
+    'Восемь. Мы писали карточку как шутку, между прочим.'
+  ];
+
+  function bingoCheck(){
+    var marked = 0;
+    cells.forEach(function(c){ if (c.dataset.on === '1') marked++; });
+    var free = 1;
+    var shown = marked - free;
+
+    var won = null;
+    for (var i = 0; i < lines.length; i++) {
+      var ok = lines[i].every(function(ix){ return cells[ix].dataset.on === '1'; });
+      if (ok) { won = lines[i]; break; }
+    }
+
+    if (won) {
+      msg.textContent = 'БИНГО. Можешь идти домой. (Не можешь. Но ты выиграла, и это уже что-то.)';
+      msg.classList.add('won');
+      won.forEach(function(ix){
+        cells[ix].classList.remove('win');
+        void cells[ix].offsetWidth;
+        cells[ix].classList.add('win');
+      });
+    } else {
+      msg.classList.remove('won');
+      msg.textContent = shown < msgs.length
+        ? msgs[shown]
+        : 'Отмечено: ' + shown + '. Слушай, может, тебе просто не ходить на планёрки.';
+    }
+  }
+
+  function toggle(cell){
+    if (cell.classList.contains('free')) return;
+    var on = cell.dataset.on === '1';
+    cell.dataset.on = on ? '0' : '1';
+    cell.classList.toggle('on', !on);
+    bingoCheck();
+  }
+
+  if (grid) {
+    grid.addEventListener('click', function(e){
+      var t = e.target.closest('.bc');
+      if (t) toggle(t);
+    });
+    grid.addEventListener('keydown', function(e){
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var t = e.target.closest('.bc');
+      if (t) { e.preventDefault(); toggle(t); }
+    });
+  }
+
+  var bReset = document.getElementById('bReset');
+  if (bReset) {
+    bReset.addEventListener('click', function(){
+      cells.forEach(function(c){
+        if (c.classList.contains('free')) return;
+        c.dataset.on = '0';
+        c.classList.remove('on', 'win');
+      });
+      bingoCheck();
+    });
+  }
+
+  bingoCheck();
+  });
+
+  /* ---------- phrasebook ---------- */
+  safely(function(){
+  var pbData = [
+    ['Это твоя зона ответственности', 'Ни людей, ни денег не будет. Решай сама, отвечай тоже сама.'],
+    ['Мы тебе полностью доверяем', 'Мы не будем помогать и не станем разбираться, если что-то пойдёт не так.'],
+    ['Нужно быть гибче', 'Сделай то, что ты называешь неправильным. И не пиши об этом в чате.'],
+    ['Команда — это зеркало руководителя', 'Люди уходят из-за тебя. Не из-за ставки, графика и штрафов.'],
+    ['Давай без негатива в общем чате', 'Проблемы не должны существовать в письменном виде.'],
+    ['Дай результат, я не хочу знать как', 'Нарушай. Но если вскроется — я об этом не знал.'],
+    ['Потерпи до конца сезона', 'Сезон закончится. Обещание — нет.'],
+    ['Ищите резервы внутри', 'Резерв — это ты. Другого нет.'],
+    ['У нас все через это проходят', 'Мы знаем, что это ненормально. Просто мы к этому привыкли.'],
+    ['У меня появилась идея', 'Сейчас будет работа ради работы. Считать её никто не станет, отменят через три недели, а объяснять команде — тебе.'],
+    ['Сверься с Аллой', 'Мы не купили программу за три тысячи в месяц. Теперь это твоя вторая работа, и она бесплатная.'],
+    ['Зарплата будет, чуть позже', 'Деньги ушли не туда. Сообщать об этом людям пойдёшь ты, потому что у нас на это нет человека.'],
+    ['Поставщик подождёт', 'Стоп-лист — твоя проблема. Объясняться с гостями тоже тебе.'],
+    ['Мы же с тобой нормально общаемся', 'Ты нужна, поэтому тебя не разбирают при всех. Это не защита, это отсрочка.'],
+    ['Совещание на часик', 'Четыре часа. Твой вечер уже занят, просто ты об этом ещё не знаешь.'],
+    ['Нам нужны такие же, как у них', 'Условия менять не будем. Найди людей уровня топового ресторана на нашу зарплату, которую мы ещё и задержим.'],
+    ['Команда держится на тебе', 'Мы это знаем. Поэтому ничего и не чиним.']
+  ];
+
+  var pbGrid = document.getElementById('pbGrid');
+  if (pbGrid) {
+    pbData.forEach(function(item){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pb';
+
+      var said = document.createElement('div');
+      said.className = 'said';
+      said.textContent = '«' + item[0] + '»';
+
+      var means = document.createElement('div');
+      means.className = 'means';
+      var inner = document.createElement('div');
+      inner.className = 'means-in';
+      var lbl = document.createElement('div');
+      lbl.className = 'lbl';
+      lbl.textContent = 'Перевод';
+      var txt = document.createElement('div');
+      txt.textContent = item[1];
+      inner.appendChild(lbl);
+      inner.appendChild(txt);
+      means.appendChild(inner);
+
+      var hint = document.createElement('div');
+      hint.className = 'hint';
+      hint.textContent = 'нажми, чтобы перевести';
+
+      b.appendChild(said);
+      b.appendChild(hint);
+      b.appendChild(means);
+      b.addEventListener('click', function(){ b.classList.toggle('open'); });
+      pbGrid.appendChild(b);
+    });
+  }
+  });
+})();
+</script>
+</body>
+</html>
